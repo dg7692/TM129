@@ -1,0 +1,42 @@
+Code written by Daniel Gooch for students on the Open University course TM129 in 2019.
+
+With thanks to Mike Richards, of the Open University, for helping produce the example images.
+
+Version 1.0
+
+-----------------
+
+These programs are intended to take 3 images, with non-overlapping obstructions, and produce an image without any obstructions in it.
+
+The folder contains two python scripts.
+
+
+-------------------
+
+The first, image_combiner_laptop.py, should be able to run on any machine with Python 3 installed. The command at a terminal window to run the code is:
+
+    python3 image_combiner_laptop.py image1 image2 image3 cores
+
+Where image1, image2 and image3 are images of the same dimensions. The "images" folder contains 11 sets of images in varying sizes (full, mid, small and tiny). The code will only work if all three images have identical dimensions and are of the same object with non-overlapping obstructions.
+
+Cores must be a number between 2 and 32 to simulate processing the image in the same way as on a cluster.
+
+An example of the script you might run is:
+
+    python3 image_combiner_laptop.py ./images/full/pin1_full.png ./images/full/pin2_full.png ./images/full/pin3_full.png 14
+    
+which will produce two outputs - output1.png and output2.png. You should also see two timings printed to the terminal window. This is because the python program image_combiner_laptop.py contains two algorithms. 
+
+The first (which produces output1.png) runs through the series of pixel comparisons in a single process.
+
+The second (which produces output2.png) segments the images and processes them as if running on a cluster.
+
+The two output images should be identical. You could use the image_combiner_laptop.py script as a template for writing a program which compares two images and tells you whether all of the pixel values match or not.
+
+-------------------
+
+The second, image_combiner_pi_cores.py, is the python script that has been written to demo the image_combiner idea on the Raspberry Pi clusters available to TM129 students through the OpenStem labs. 
+
+You are unlikely to be able to run this script at home unless you own a Raspberry Pi cluster which has been configured with Dispy and that uses and pimoroni Unicorn hat. 
+
+However, you can examine the code and note that the same activities are happening within the cluster code [with some extra processing using Dispy] as in the image_combiner_laptop.py code.
