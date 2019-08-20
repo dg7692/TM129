@@ -1,0 +1,39 @@
+Code written by Daniel Gooch for students on the Open University course TM129 in 2019.
+
+With thanks to Neil Smith at the Open University for the dictionary, available on GitHub, https://github.com/NeilNjae/cipher-tools
+
+Version 1.0
+
+-----------------
+
+These programs are intended to take 2 11-letter words, combine them and hash them, simulating a hashed password. The programs then run through the dictionary, looking for two words which when combined, have the same hash value.
+
+The folder contains two python scripts.
+
+The scripts use the words_extract.txt dictionary file. Two additional dictionaries are included - words_11.txt contains 11-letter words from the words_full.txt dictionary file. You may want to experiment with these dictionaries to compare speeds on your own computer.
+
+-------------------
+
+The first, hashing_laptop.py, should be able to run on any machine with Python 3 installed. The command at a terminal window to run the code is:
+
+    python3 hashing_laptop.py word1 word2 cores
+
+Where word1 and word2 are 11-letter words present in the file words_extract.txt. Cores must be a number between 2 and 32 to simulate processing the dictionary in the same way as on a cluster.
+
+An example of the script you might run is:
+
+    python3 hashing_laptop.py predictions possibility 14 
+    
+which will work out that predictions and possibility from the hashed values. You should also see two timings printed to the terminal window. This is because the python program image_combiner_laptop.py contains two algorithms. 
+
+The first runs through the dictionary in a single process.
+
+The second segments the dictionary and processes it as if running on a cluster.
+
+-------------------
+
+The second, hashing_pi_cores.py, is the python script that has been written to demo the hashing idea on the Raspberry Pi clusters available to TM129 students through the OpenStem labs. 
+
+You are unlikely to be able to run this script at home unless you own a Raspberry Pi cluster which has been configured with Dispy and that uses and pimoroni Unicorn hat. 
+
+However, you can examine the code and note that the same activities are happening within the cluster code [with some extra processing using Dispy] as in the image_combiner_laptop.py code.

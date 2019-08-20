@@ -1,0 +1,35 @@
+Code written by Daniel Gooch for students on the Open University course TM129 in 2019.
+
+Version 1.0
+
+-----------------
+
+These programs are intended to time how long it takes to calculate the minimum and maximum distance between 11 locations, given a set of distances between any 2 locations. This problem is also known as the Travelling Salesman problem.
+
+The folder contains two python scripts.
+
+-------------------
+
+The first, travelling_laptop.py, should be able to run on any machine with Python 3 installed. The command at a terminal window to run the code is:
+
+    python3 travelling_laptop.py number_of_locations cores
+
+Where number_of_locations is a number between 3 and 10 inclusive. Cores must be a number between 2 and 32 to simulate processing the dictionary in the same way as on a cluster.
+
+An example of the script you might run is:
+
+    python3 hashing_laptop.py 10 14 
+    
+which will work out the minimum and maximum distance between the 10 locations. You should also see two timings printed to the terminal window. This is because the python program travelling_laptop.py contains two algorithms. 
+
+The first runs through the permutations in a single process.
+
+The second segments the permutations and processes it as if running on a cluster.
+
+-------------------
+
+The second, travelling_pi_cores.py, is the python script that has been written to demo the travelling salesman problem on the Raspberry Pi clusters available to TM129 students through the OpenStem labs.
+
+You are unlikely to be able to run this script at home unless you own a Raspberry Pi cluster which has been configured with Dispy and that uses and pimoroni Unicorn hat. 
+
+However, you can examine the code and note that the same activities are happening within the cluster code [with some extra processing using Dispy] as in the travelling_laptop.py code.
