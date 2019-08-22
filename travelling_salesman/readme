@@ -18,7 +18,7 @@ Where number_of_locations is a number between 3 and 10 inclusive. Cores must be 
 
 An example of the script you might run is:
 
-    python3 hashing_laptop.py 10 14 
+    python3 travelling_laptop.py 10 14 
     
 which will work out the minimum and maximum distance between the 10 locations. You should also see two timings printed to the terminal window. This is because the python program travelling_laptop.py contains two algorithms. 
 
